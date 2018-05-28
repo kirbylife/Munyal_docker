@@ -27,6 +27,7 @@ ADDRESS = {
 def run(command):
     process = Popen(command, stdout=PIPE, shell=True)
     while True:
+        try:
         line = process.stdout.readline().strip()
         if not line:
             break
